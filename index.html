@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>中小企業向け AI伴走コンサルティング 6ヶ月導入プラン</title>
+  <style>
+    :root{
+      --navy:#17324d;
+      --navy2:#244968;
+      --blue:#3f78a8;
+      --light:#f5f8fb;
+      --line:#dbe5ee;
+      --text:#243342;
+      --muted:#647587;
+      --accent:#c8843f;
+      --white:#ffffff;
+      --green:#3f8066;
+      --shadow:0 10px 28px rgba(23,50,77,.10);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+      color:var(--text);
+      background:var(--white);
+      line-height:1.8;
+    }
+    .hero{
+      background:linear-gradient(135deg,var(--navy),var(--navy2));
+      color:#fff;
+      padding:72px 24px 58px;
+    }
+    .wrap{max-width:1120px;margin:0 auto}
+    .eyebrow{
+      display:inline-block;
+      font-size:13px;
+      letter-spacing:.12em;
+      font-weight:700;
+      opacity:.82;
+      margin-bottom:14px;
+    }
+    h1{
+      font-size:clamp(34px,5vw,60px);
+      line-height:1.22;
+      margin:0 0 18px;
+      letter-spacing:.01em;
+    }
+    .hero p{
+      max-width:820px;
+      font-size:clamp(17px,2vw,22px);
+      margin:0 0 28px;
+      color:rgba(255,255,255,.9);
+    }
+    .price-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:26px}
+    .price-card{
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.20);
+      border-radius:16px;
+      padding:16px 20px;
+      min-width:180px;
+      backdrop-filter:blur(8px);
+    }
+    .price-card small{display:block;opacity:.75}
+    .price-card strong{font-size:26px;display:block;margin-top:2px}
+    section{padding:68px 24px}
+    section.alt{background:var(--light)}
+    h2{
+      font-size:clamp(28px,3vw,38px);
+      line-height:1.35;
+      color:var(--navy);
+      margin:0 0 12px;
+    }
+    .lead{font-size:18px;color:var(--muted);max-width:860px;margin:0 0 34px}
+    .purpose-grid,.service-grid,.example-grid,.final-grid{display:grid;gap:20px}
+    .purpose-grid{grid-template-columns:repeat(4,1fr)}
+    .service-grid{grid-template-columns:repeat(3,1fr)}
+    .example-grid{grid-template-columns:repeat(4,1fr)}
+    .final-grid{grid-template-columns:repeat(2,1fr)}
+    .card{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:24px;
+      box-shadow:var(--shadow);
+    }
+    .num{
+      width:40px;height:40px;border-radius:50%;
+      display:flex;align-items:center;justify-content:center;
+      background:var(--navy);color:#fff;font-weight:700;margin-bottom:14px;
+    }
+    .card h3{margin:0 0 8px;color:var(--navy);font-size:20px;line-height:1.4}
+    .card p{margin:0;color:var(--muted)}
+    .timeline{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:28px}
+    .month{
+      position:relative;
+      background:#fff;
+      border:1px solid var(--line);
+      border-top:5px solid var(--blue);
+      border-radius:16px;
+      padding:20px 16px;
+      min-height:225px;
+      box-shadow:var(--shadow);
+    }
+    .month:nth-child(5),.month:nth-child(6){border-top-color:var(--green)}
+    .month-label{font-size:13px;color:var(--blue);font-weight:800;letter-spacing:.08em}
+    .month h3{font-size:19px;margin:8px 0 10px;color:var(--navy)}
+    .month ul{padding-left:18px;margin:0;color:var(--muted);font-size:14px}
+    .month .output{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);font-size:13px;color:var(--text);font-weight:700}
+    .flow{
+      display:flex;align-items:stretch;gap:10px;flex-wrap:wrap;margin-top:30px
+    }
+    .flow-item{
+      flex:1 1 150px;
+      background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px;text-align:center;font-weight:700;color:var(--navy)
+    }
+    .arrow{display:flex;align-items:center;color:var(--accent);font-weight:900;font-size:24px}
+    .example .before{font-size:14px;color:var(--muted)}
+    .example .after{font-size:28px;color:var(--navy);font-weight:800;margin:6px 0}
+    .example .note{font-size:13px;color:var(--green);font-weight:700}
+    .quote{
+      background:var(--navy);
+      color:#fff;
+      border-radius:22px;
+      padding:34px;
+      font-size:clamp(22px,3vw,34px);
+      line-height:1.55;
+      font-weight:700;
+      margin-top:28px;
+    }
+    .quote span{color:#f0c48c}
+    .fee{
+      display:grid;grid-template-columns:1fr 1fr;gap:22px;align-items:stretch
+    }
+    .fee-main{background:var(--navy);color:#fff;border-radius:20px;padding:32px}
+    .fee-main .big{font-size:48px;font-weight:800;line-height:1.1;margin:8px 0}
+    .fee-main p{color:rgba(255,255,255,.82);margin:0}
+    .fee-sub{background:#fff;border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:var(--shadow)}
+    .fee-sub ul{margin:0;padding-left:20px}
+    .note-box{margin-top:22px;border-left:5px solid var(--accent);background:#fff8ef;padding:18px 20px;border-radius:10px;color:#5f4a31}
+    .footer{background:#10273b;color:#dbe7f1;padding:34px 24px;text-align:center;font-size:14px}
+    .mini{font-size:13px;color:var(--muted)}
+    @media (max-width:980px){
+      .purpose-grid{grid-template-columns:repeat(2,1fr)}
+      .service-grid{grid-template-columns:repeat(2,1fr)}
+      .example-grid{grid-template-columns:repeat(2,1fr)}
+      .timeline{grid-template-columns:repeat(2,1fr)}
+    }
+    @media (max-width:640px){
+      .hero{padding:54px 20px 44px}
+      section{padding:52px 20px}
+      .purpose-grid,.service-grid,.example-grid,.final-grid,.timeline,.fee{grid-template-columns:1fr}
+      .price-card{width:100%}
+      .arrow{display:none}
+      .flow{display:grid;grid-template-columns:1fr}
+      .month{min-height:auto}
+      .quote{padding:26px 22px}
+    }
+  </style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">SMILE PLUS CONSULTING ｜ AI伴走支援プラン</div>
+    <h1>中小企業向け<br>AI伴走コンサルティング<br>6ヶ月導入プラン</h1>
+    <p>AIを「学ぶ」だけで終わらせず、会社の実際の仕事に落とし込み、業務改善・仕組み化・社内定着までを6ヶ月で伴走します。</p>
+    <div class="price-row">
+      <div class="price-card"><small>月額</small><strong>150,000円</strong></div>
+      <div class="price-card"><small>期間</small><strong>6ヶ月</strong></div>
+      <div class="price-card"><small>総額</small><strong>900,000円</strong></div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>このコンサルティングの目的</h2>
+    <p class="lead">大切なのは「ChatGPTを使える人を増やすこと」ではありません。会社の中に、AIを使って仕事を改善できる考え方と仕組みを残すことです。</p>
+    <div class="purpose-grid">
+      <div class="card"><div class="num">1</div><h3>見つける</h3><p>時間がかかっている業務、属人化している仕事、繰り返し業務を洗い出します。</p></div>
+      <div class="card"><div class="num">2</div><h3>使う</h3><p>メール、議事録、営業資料、調査、採用など、日常業務でAIを実際に使います。</p></div>
+      <div class="card"><div class="num">3</div><h3>仕組みにする</h3><p>プロンプト、テンプレート、簡易ツールなど、誰でも再利用できる形にします。</p></div>
+      <div class="card"><div class="num">4</div><h3>会社に残す</h3><p>運用ルール、マニュアル、担当者を整え、6ヶ月後も社内で回る状態を目指します。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>6ヶ月ロードマップ</h2>
+    <p class="lead">「教える」→「使う」→「改善する」→「仕組みにする」→「定着させる」の順で進めます。</p>
+    <div class="timeline">
+      <div class="month">
+        <div class="month-label">1 MONTH</div>
+        <h3>現状把握・AI戦略設計</h3>
+        <ul><li>経営者・責任者ヒアリング</li><li>業務棚卸し</li><li>課題整理</li><li>優先業務を3〜5件選定</li></ul>
+        <div class="output">成果物：AI活用ロードマップ</div>
+      </div>
+      <div class="month">
+        <div class="month-label">2 MONTH</div>
+        <h3>AI基礎・個人活用</h3>
+        <ul><li>ChatGPT等の基本</li><li>文章・要約・調査</li><li>議事録・資料作成</li><li>実務別プロンプト作成</li></ul>
+        <div class="output">成果物：社内プロンプト集</div>
+      </div>
+      <div class="month">
+        <div class="month-label">3 MONTH</div>
+        <h3>業務改善</h3>
+        <ul><li>営業・事務・採用を改善</li><li>Before / After確認</li><li>時間削減効果を記録</li><li>3〜5業務を実践</li></ul>
+        <div class="output">成果物：業務改善事例</div>
+      </div>
+      <div class="month">
+        <div class="month-label">4 MONTH</div>
+        <h3>部門別AI活用</h3>
+        <ul><li>営業部向けAI</li><li>管理部向けAI</li><li>経営層向けAI</li><li>仕事の流れに組み込む</li></ul>
+        <div class="output">成果物：部門別テンプレート</div>
+      </div>
+      <div class="month">
+        <div class="month-label">5 MONTH</div>
+        <h3>AI仕組み化</h3>
+        <ul><li>簡易AIツール</li><li>GPT活用</li><li>社内AI仕事ハブ</li><li>繰り返し利用を設計</li></ul>
+        <div class="output">成果物：AIツール・簡易アプリ</div>
+      </div>
+      <div class="month">
+        <div class="month-label">6 MONTH</div>
+        <h3>定着・成果確認</h3>
+        <ul><li>効果測定</li><li>社内ルール整備</li><li>担当者選定</li><li>次の6ヶ月を設計</li></ul>
+        <div class="output">成果物：運用マニュアル＋次期計画</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>毎月の支援内容</h2>
+    <p class="lead">単発研修ではなく、「相談 → 実践 → 改善 → 定着」を毎月繰り返します。</p>
+    <div class="service-grid">
+      <div class="card"><h3>経営者・責任者ミーティング</h3><p>月1回・60〜90分。経営課題、業務課題、次に取り組むAI活用を整理します。</p></div>
+      <div class="card"><h3>社員向けAI実践会</h3><p>月1回・60〜90分。実際の業務を題材に、AIを使う練習を行います。</p></div>
+      <div class="card"><h3>随時相談</h3><p>メール・チャット等で、日常業務のAI活用やプロンプトについて相談できます。</p></div>
+      <div class="card"><h3>業務改善</h3><p>毎月1〜2業務を目安に、AI活用による改善方法を具体化します。</p></div>
+      <div class="card"><h3>テンプレート作成</h3><p>営業、事務、採用、会議など、会社専用のプロンプト・ひな形を整備します。</p></div>
+      <div class="card"><h3>簡易ツール制作</h3><p>必要に応じて、HTMLやGPTを活用した簡易な社内ツールを提案・制作します。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>業務改善イメージ</h2>
+    <p class="lead">「便利になった」で終わらせず、時間削減などの変化を数字で確認します。</p>
+    <div class="example-grid">
+      <div class="card example"><div class="before">議事録作成</div><div class="after">30分 → 5分</div><div class="note">会議後の負担を軽減</div></div>
+      <div class="card example"><div class="before">営業メール作成</div><div class="after">20分 → 5分</div><div class="note">返信スピードを向上</div></div>
+      <div class="card example"><div class="before">提案書の骨子作成</div><div class="after">60分 → 15分</div><div class="note">考える時間を短縮</div></div>
+      <div class="card example"><div class="before">採用・広報文章</div><div class="after">0から作成 → AI初稿</div><div class="note">発信のハードルを下げる</div></div>
+    </div>
+    <p class="mini" style="margin-top:16px;">※上記は一例です。実際の改善効果は業務内容・運用状況によって異なります。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>GPTを活用した伴走の進め方</h2>
+    <p class="lead">コンサルタントがすべての答えを持つのではなく、現場の情報をもとにAIと一緒に整理し、実務に合う形へ落とし込みます。</p>
+    <div class="flow">
+      <div class="flow-item">① お客様からヒアリング</div>
+      <div class="arrow">→</div>
+      <div class="flow-item">② GPTと整理・分析</div>
+      <div class="arrow">→</div>
+      <div class="flow-item">③ 改善案を作成</div>
+      <div class="arrow">→</div>
+      <div class="flow-item">④ 現場で実践</div>
+      <div class="arrow">→</div>
+      <div class="flow-item">⑤ 効果確認・次の改善へ</div>
+    </div>
+    <div class="quote">AIの専門家になることが目的ではありません。<br><span>「会社のどこが困っているか」を見つけ、AI活用へ翻訳する</span>ことが役割です。</div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>6ヶ月後に目指す状態</h2>
+    <p class="lead">コンサルタントがいなくても、社内でAI活用を続けられる状態を目指します。</p>
+    <div class="final-grid">
+      <div class="card"><h3>社員がAIを日常業務で使える</h3><p>一部の詳しい人だけでなく、実務担当者が自分の仕事でAIを使える状態へ。</p></div>
+      <div class="card"><h3>業務時間が減る</h3><p>繰り返し作業、文章作成、情報整理などの時間を削減し、本来業務へ時間を戻します。</p></div>
+      <div class="card"><h3>会社独自のAI資産が残る</h3><p>プロンプト、テンプレート、マニュアル、簡易ツールを蓄積します。</p></div>
+      <div class="card"><h3>次の改善テーマが見える</h3><p>6ヶ月で終わりではなく、どの業務を次に改善するかを明確にします。</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>費用</h2>
+    <div class="fee">
+      <div class="fee-main">
+        <div>AI伴走コンサルティング</div>
+        <div class="big">月額 15万円</div>
+        <p>6ヶ月契約 ／ 総額 90万円</p>
+      </div>
+      <div class="fee-sub">
+        <h3 style="margin-top:0;color:var(--navy)">含まれる主な支援</h3>
+        <ul>
+          <li>経営者・責任者との定例ミーティング</li>
+          <li>社員向けAI実践会</li>
+          <li>業務改善提案</li>
+          <li>プロンプト・テンプレート作成</li>
+          <li>AI活用マニュアル整備</li>
+          <li>必要に応じた簡易AIツール提案</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note-box">※基幹システム連携、大規模システム開発、高度な自動化などは、内容を確認のうえ別途お見積り、または専門パートナーとの連携を想定します。</div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <h2>最後に</h2>
+    <div class="quote">AI導入の目的は、AIを使うことではありません。<br><span>社員の時間を生み出し、本来の仕事に集中できる会社にすること。</span><br>そのための6ヶ月伴走支援です。</div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">Smile Plus Consulting ｜ 中小企業向け AI伴走コンサルティング 6ヶ月導入プラン</div>
+</footer>
+
+</body>
+</html>
